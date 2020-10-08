@@ -7,6 +7,7 @@ Address parse_address(::rust::Str input) {
     std::stringstream ss(to_parse);
     std::string street_address;
     ss >> results.house_number >> street_address;
+    validate_house_number(results.house_number);
     results.street = std::make_unique<std::string>(street_address);
     return results;
 }

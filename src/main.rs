@@ -9,6 +9,16 @@ mod ffi {
         include!("cxx-demo/include/demo.h");
         fn parse_address(input: &str) -> Address;
     }
+
+    extern "Rust" {
+        fn validate_house_number(number: u64);
+    }
+}
+
+fn validate_house_number(number: u64) {
+    if number < 10000 {
+        panic!("Unrealistically small California house number.");
+    }
 }
 
 fn main() {
