@@ -1,0 +1,15 @@
+[package]
+name = "autocxx-demo"
+version = "0.1.0"
+authors = ["Adrian Taylor <adetaylor@chromium.org>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cxx = "0.5.0"
+autocxx = "0.3.1"
+
+[build-dependencies]
+autocxx-build = "0.3.1"
+
