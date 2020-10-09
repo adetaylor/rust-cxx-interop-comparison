@@ -8,6 +8,10 @@ mod ffi {
     extern "C++" {
         include!("cxx-demo/include/demo.h");
         fn parse_address(input: &str) -> Address;
+
+        impl Address {
+            fn print(&self);
+        }
     }
 
     extern "Rust" {
@@ -24,5 +28,6 @@ fn validate_house_number(number: u64) {
 fn main() {
     let input_address = &std::env::args().collect::<Vec<String>>()[1];
     let parsed = ffi::parse_address(input_address);
+    parsed.print();
     println!("Street is: {}. Number is {}.", parsed.street, parsed.house_number);
 }
