@@ -1,3 +1,4 @@
+#[allow(non_camel_case_types)]
 pub type size_t = ::std::os::raw::c_ulong;
 
 #[repr(C)]
